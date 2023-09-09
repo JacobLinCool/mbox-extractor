@@ -1,0 +1,23 @@
+[package]
+name = "mbox-extractor"
+version = "0.1.0"
+edition = "2021"
+homepage = "https://github.com/JacobLinCool/mbox-extractor"
+repository = "https://github.com/JacobLinCool/mbox-extractor"
+keywords = ["mbox", "eml", "email", "mailbox"]
+categories = ["command-line-utilities", "email"]
+readme = "README.md"
+license = "AGPL-3.0"
+include = ["/src", "/examples", "build.rs", "LICENSE"]
+build = "build.rs"
+
+[[bin]]
+name = "mbox-extractor"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.4.2", features = ["derive", "string"] }
+regex = "1.9.5"
+
+[build-dependencies]
+vergen = { version = "8.1.3", features = ["build", "cargo", "git", "gitcl", "rustc", "si"] }
